@@ -9,19 +9,23 @@ Audio Alpaca is only OSX compatible.
 ## Developing
 ### Installation
 To install for dev, you must navigate into the root level directory and retrieve node dependencies with:
+
 `npm install`
 
 Next, compile the formatter python script with
+
 `pyinstaller formatter/run.py`
 
 If this fails for you, [set up pyinstaller](https://www.pyinstaller.org/)
 
 ### Running
 The project can be run from the root directory with
+
 `npm start`
 
 ### Building
 To build the .app file, run
+
 `npm run make`
 
 ### Signing
