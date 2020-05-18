@@ -1,0 +1,263 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: auto;
+  max-width: 38rem;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.logo {
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  margin-right: 10px;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: -apple-system,".SFNSText-Regular","Helvetica Neue","Roboto","Segoe UI",sans-serif;
+}
+
+.toggle {
+	cursor: pointer;
+	display: inline-block;
+}
+
+.toggle-switch {
+	display: inline-block;
+	background: rgb(255,255,255,0.7);
+	border-radius: 16px;
+	width: 38px;
+	height: 20px;
+	position: relative;
+	vertical-align: middle;
+	transition: background 0.25s;
+  margin-right: 10px;
+}
+
+.toggle-switch:before, .toggle-switch:after {
+	content: "";
+}
+
+.toggle-switch:before {
+	display: block;
+	background: white;
+	border-radius: 50%;
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.08);
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+  transition: 0.2s;
+	transition: left 0.25s;
+}
+
+.toggle:hover .toggle-switch:before {
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-checkbox:checked + .toggle-switch {
+	background: #56c080;
+}
+
+.toggle-checkbox:checked + .toggle-switch:before {
+	left: 20px;
+}
+
+.toggle-checkbox {
+	position: absolute;
+	visibility: hidden;
+}
+
+.toggle-label {
+	margin-left: 5px;
+	position: relative;
+	top: 2px;
+}
+
+.fileinput {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 4px;
+    width: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 6px;
+    color: white;
+    border: 1px solid white;
+    display: inline-block;
+    transition: opacity 0.2s;
+    cursor: pointer;
+}
+
+.fileinput:hover {
+  opacity: 0.8;
+}
+
+.actionbutton {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px;
+  width: 140px;
+  float: right;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 6px;
+  color: rgb(0,0,0,0.65);
+  background-color: rgb(255,255,255,1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+.hidden {
+  overflow: hidden;
+  width: 0px !important;
+  height: 0px !important;
+}
+
+.box {
+  position: relative;
+  width: 50%;
+  height: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.box .percent {
+  position: relative;
+  width: 150px;
+  justify-content: center;
+  align-items: center;
+}
+
+.box .percent svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.box .percent svg circle {
+  width: 150px;
+  height: 150px;
+  fill: none;
+  stroke-width: 10;
+  stroke: #000;
+  transform: translate(5px, 5px);
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  stroke-linecap: round;
+}
+
+.box .percent svg circle:nth-child(1) {
+  stroke-dashoffset: 0;
+  stroke: rgb(0,0,0,0.26);
+}
+
+.box .percent svg circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 0) / 100);
+  stroke: #F4B8B7;
+}
+
+.box .percent .number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.box .percent .number h2 {
+  font-weight: 300;
+  font-size: 26px;
+}
+
+.box .percent .number h2 span {
+  font-weight: 300;
+  font-size: 26px;
+  margin-left: 2px;
+}
+
+.wing {
+  display: flex;
+  overflow: hidden;
+  width: 25%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.format {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: calc(100vh - 118px);
+}
+
+.cancel {
+  height: 28px;
+  cursor: pointer;
+  border-radius: 6px;
+  display: flex;
+  border: 1px solid white;
+  justify-content: center;
+  align-items: center;
+}
+
+.start {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 118px);
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.results {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 118px);
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.textbox {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255,255,255,0.1);
+  padding: 6px;
+  overflow-y: scroll;
+  white-space: pre-wrap;
+}
+
+.boxcontainer {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#currentfile {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.6;
+}

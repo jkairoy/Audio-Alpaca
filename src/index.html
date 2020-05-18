@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="formatter.js"></script>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body style="padding: 0px; background-color: #2F2F3C; color: white">
+    <div style="height: 22px; width: 100%; -webkit-app-region: drag">
+    </div>
+    <section style="padding-left: 30px;
+      padding-right: 30px;
+      font-size: 14px;">
+      <div style="display: flex; flex-direction: row; align-items: center; font-size: 16px">
+        <img class="logo" src="images/AudioAlpaca.png">
+        <h1>Audio Alpaca</h1>
+      </div>
+      <section class="start" id="start">
+        <p style="margin-top: 10px; margin-bottom: 0px;">
+          We reccomend that you do not use source as destination due to potentially desctructive
+          formatting, but you are free to do so!
+        </p>
+        <div style="display: flex; flex-direction: column">
+          <label class="toggle">
+          	<input id="duplicatetoggle" class="toggle-checkbox" type="checkbox">
+          	<div class="toggle-switch"></div>
+          	<span class="toggle-label">Remove duplicate audio files</span>
+          </label>
+          <label style="margin-top: 14px" class="toggle">
+          	<input id="sourcetoggle" class="toggle-checkbox" type="checkbox">
+          	<div class="toggle-switch"></div>
+          	<span class="toggle-label">Use source as destination</span>
+          </label>
+        </div>
+        <div>
+          <div>
+            <div id="inputdir" class="fileinput">
+              Choose an input folder
+            </div>
+          </div>
+          <div style="margin-top: 14px">
+            <div id="outputdir" class="fileinput">
+              Choose an output folder
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="formatbutton" class="actionbutton">
+            Format
+          </div>
+        </div>
+      </section>
+      <section style="opacity: 0" class="format hidden" id="format">
+        <div class="wing">
+          <div></div>
+          <div id="currentfile"></div>
+          <div></div>
+        </div>
+        <div class="box">
+          <div class="percent">
+            <svg>
+              <circle cx="70" cy="70" r ="70"></circle>
+              <circle id="spinner" cx="70" cy="70" r ="70"></circle>
+            </svg>
+            <div class="number">
+              <h2 id="percent">0</h2>
+            </div>
+          </div>
+        </div>
+        <div class="wing">
+          <div style="height: 28px"></div>
+          <div style="white-space: pre-line" id="status"></div>
+          <div id="cancel" class="cancel">
+            Cancel
+          </div>
+        </div>
+      </section>
+      <section style="opacity: 0" class="results hidden" id="results">
+        <div id="summary">
+        </div>
+        <div class="boxcontainer">
+          <div class="textbox" id="resultbox">
+          </div>
+        </div>
+        <div>
+          <div id="done" class="actionbutton">
+            Done
+          </div>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>
