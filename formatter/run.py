@@ -32,6 +32,11 @@ def format(sourcedir, destinationdir, dumpdir, remoxvedup):
                 stagedsf = soundfile.SoundFile(fullpath)
             except RuntimeError as error:
                 print_stderr(error)
+                # if unknown file type, put it in the dump
+                filename = ntpath.basename(fullpath)
+                dumplocation = dumpdir + "/Unknown/" + filename
+                copyfile(fullpath, dumplocation)
+                # if souce is destination, remove the original files
                 if sourcedir == destinationdir:
                     try:
                         os.remove(fullpath)
@@ -45,12 +50,12 @@ def format(sourcedir, destinationdir, dumpdir, remoxvedup):
                 if check_duplicate(data, fullpath):
                     continue
             # reformat wav if needed
-            if (stagedsf.subtype == 'PCM_24' or stagedsf.subtype == 'PCM_16' or \
-                stagedsf.subtype == 'PCM_S8' or stagedsf.subtype == 'PCM_U8'):
+            if (stagedsf.subtype == 'PCM_24' or stagedsf.subtype == 'PCM_16'):
                 if not os.path.exists(stagingpath):
                     copyfile(fullpath, stagingpath)
             elif stagedsf.subtype == 'PCM_32' or stagedsf.subtype == 'FLOAT' or \
-                 stagedsf.subtype == 'MS_ADPCM':
+                 stagedsf.subtype == 'MS_ADPCM' or stagedsf.subtype == 'PCM_U8' or \
+                 stagedsf.subtype == 'PCM_S8':
                 if os.path.exists(stagingpath):
                     try:
                         os.remove(stagingpath)
@@ -115,7 +120,7 @@ def screen_file(fullpath, stagingpath, dumpdir):
         return True
     if file_extension == '.sf2' or file_extension == '.SF2':
         filename = ntpath.basename(fullpath)
-        dumplocation = dumpdir + "/Instruments/SF2" + filename
+        dumplocation = dumpdir + "/Instruments/SF2/" + filename
         if not os.path.exists(dumplocation):
             copyfile(fullpath, dumplocation)
         if fullpath == stagingpath:
@@ -126,7 +131,7 @@ def screen_file(fullpath, stagingpath, dumpdir):
         return True
     if file_extension == '.fxp':
         filename = ntpath.basename(fullpath)
-        dumplocation = dumpdir + "/Instruments/FXP" + filename
+        dumplocation = dumpdir + "/Instruments/FXP/" + filename
         if not os.path.exists(dumplocation):
             copyfile(fullpath, dumplocation)
         if fullpath == stagingpath:
@@ -175,6 +180,8 @@ def create_dump(dumpdir):
         os.mkdir(dumplocation + "/Instruments/SF2")
     if not os.path.exists(dumplocation + "/Patches"):
         os.mkdir(dumplocation + "/Patches")
+    if not os.path.exists(dumplocation + "/Unknown"):
+        os.mkdir(dumplocation + "/Unknown")
 
 
 # scan source dir

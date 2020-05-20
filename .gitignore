@@ -89,6 +89,5 @@ typings/
 out/
 
 # Python dist
-formatter/build/
-formatter/dist/
-formatter/run.spec
+build/
+run.spec

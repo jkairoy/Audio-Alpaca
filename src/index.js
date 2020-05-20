@@ -103,7 +103,7 @@ ipcMain.on('startFormatting', (event, arg) => {
   let duplicates = []
   let errors = []
   var dataToSend;
-  const python = spawn(path.join(__dirname, '../formatter/dist/run/run'), [inputdir, outputdir, duplicatetoggle]);
+  const python = spawn(path.join(__dirname, '../formatter/run'), [inputdir, outputdir, duplicatetoggle]);
   python.stderr.on('data', function (data) {
     dataToSend = data.toString();
     let chunks = dataToSend.split("<<<")
