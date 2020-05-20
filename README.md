@@ -4,7 +4,7 @@
 Audio Alpaca is meant to format .wav files for use in **Logic Pro X untagged loops**. Logic requires that its samples must be 44100 HZ and <= 24 bit. Thus, Audio Alpaca reduces any overly deep .wav files and esures all .wav formatting is correct. Audio Alpaca can do more than this though! The software **filters out any .mid and instrument files** and dumps them into an organized directory named "SoundManagerDump", leaving your data 100% sound files. Audio Alpaca preserves .mp3 files and other common Logic Pro playable formats. Finally, Audio Alpaca can **filter out duplicate samples** you may have so you don't waste any space on your hard drive!
 
 ## Installing
-Audio Alpaca is only OSX compatible. Find an installer for the current version [here](https://drive.google.com/open?id=13d0-c4C3izg5bHtJgDgyVwdx-3FkaeFU).
+Audio Alpaca is only OSX compatible. Find an installer for the current version [here](https://drive.google.com/open?id=11XHHExbhgrWE0sXKIWSwJOrhXx1hjWfV).
 
 ## Developing
 ### Installation
